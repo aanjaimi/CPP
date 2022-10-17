@@ -8,6 +8,6 @@ private:
     Weapon      &weapon;
 public:
     void    attack();
-    HumanA(std::string n, Weapon w);
+    HumanA(std::string n, Weapon &w);
     ~HumanA();
 };
