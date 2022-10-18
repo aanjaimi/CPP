@@ -5,11 +5,6 @@ void    msg()
     std::cout << "[ Probably complaining about insignificant problems ]" << std::endl;
 }
 
-// int set_level(std::string level)
-// {
-//     if (level = "debug")
-// }
-
 void    Harl::debug(void)
 {
     std::cout << "I love having extra bacon for my 7XL-double-cheese-triple-pickle-specialketchup burger." << std::endl << "I really do!" << std::endl;
@@ -49,16 +44,33 @@ void    Harl::complain(std::string level)
         &Harl::error
     };
 
+    int j = -1;
     for (int i = 0;i < 4;i++)
     {
         if (in[i] == level)
         {
-            std::cout << "[ " << level << " ]" << std::endl;
-            (this->*funcs[i])();
-            return ;
+            j = i;
+            break ;
         }
     }
-    msg();
+    switch(j)
+    {
+        case 0:
+            (this->*funcs[0])();
+            break ;
+        case 1:
+            (this->*funcs[1])();
+            break ;
+        case 2:
+            (this->*funcs[2])();
+            break ;
+        case 3:
+            (this->*funcs[3])();
+            break ;
+        default:
+            msg();
+            break ;
+    }  
 }
 
 Harl::Harl()
