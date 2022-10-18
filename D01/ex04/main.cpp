@@ -3,6 +3,7 @@
 
 int main(int ac, char **av)
 {
+    int             i;
     std::string     line;
     std::fstream    fs;
     std::string     s1;
@@ -19,20 +20,24 @@ int main(int ac, char **av)
     s2 = av[3];
     if (file.is_open())
     {
+        std::string tmp = ".replace";
+        std::ofstream filerep(av[1] + tmp);
+        std::string a;
+        std::string t;
         while (getline(file, line))
         {
-            index = line.find(s1);
-            // std::cout << line << std::endl;
-            if (index != std::string::npos)
+            a = line;
+            index = a.find(s1);
+            i = 0;
+            while (index != std::string::npos && s1 != s2)
             {
-                for (int i = 0;i < s2.length();i++)
-                {
-                    
-                }
+                t = a.substr(0, index) + s2;
+                a = t + a.substr(index + s1.length(), line.length() - (index + s1.length()));
+                index = a.find(s1);
             }
-            
+            filerep << a << std::endl;
         }
     }
     else
-        std::cout << "Unable to open file" <<std::endl;
+        std::cout << "Unable to open file" << std::endl;
 }
