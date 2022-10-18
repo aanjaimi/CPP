@@ -29,7 +29,7 @@ int main(int ac, char **av)
             a = line;
             index = a.find(s1);
             i = 0;
-            while (index != std::string::npos && s1 != s2)
+            while (index != std::string::npos && s1 != s2 && s1.length() > 0)
             {
                 t = a.substr(0, index) + s2;
                 a = t + a.substr(index + s1.length(), line.length() - (index + s1.length()));
