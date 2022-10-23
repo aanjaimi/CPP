@@ -2,37 +2,26 @@
 
 Fixed::Fixed()
 {
-    // std::cout << "Default constructor called" << std::endl;
     fix_point_num = 0;
 }
 
 Fixed::Fixed(int value)
 {
-    // std::cout << "Int constructor called" << std::endl;
-    // std::cout << "fb : " << fra_bits << std::endl << "fpn : " << fix_point_num << std::endl;
     fix_point_num = value << fra_bits;
-    // std::cout << fix_point_num << std::endl;
-    // std::cout << "-------------------------------\n";
 }
 
 Fixed::Fixed(float value)
 {
-    // std::cout << "Float constructor called" << std::endl;
-    // std::cout << "fb : " << fra_bits << std::endl << "fpn : " << fix_point_num << std::endl; 
     fix_point_num = (int)round(value * (float)(1 << fra_bits));
-    // std::cout << fix_point_num << std::endl;
-    // std::cout << "-------------------------------\n";
 }
 
 Fixed::Fixed(const Fixed &f)
 {
-    // std::cout << "Copy constructor called" << std::endl;
     *this = f;
 }
 
 Fixed &Fixed::operator = (const Fixed &f)
 {
-    // std::cout << "Copy assignment operator called" << std::endl;
     this->fix_point_num = f.fix_point_num;
     return (*this);
 }
@@ -101,12 +90,14 @@ Fixed   Fixed::operator / (const Fixed &f)
 
 Fixed   &Fixed::operator ++ (void)
 {
+    //pre-increment
     this->fix_point_num += 1;
     return (*this);
 }
 
 Fixed   Fixed::operator ++ (int)
 {
+    //post-increment
     Fixed tmp(*this);
     this->fix_point_num += 1;
     return (tmp);
@@ -114,12 +105,14 @@ Fixed   Fixed::operator ++ (int)
 
 Fixed   &Fixed::operator -- (void)
 {
+    //pre-decrement
     this->fix_point_num -= 1;
     return (*this);
 }
 
 Fixed   Fixed::operator -- (int)
 {
+    //post-decrement
     Fixed tmp(*this);
     this->fix_point_num -= 1;
     return (tmp);
@@ -155,12 +148,10 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
 
 Fixed::~Fixed()
 {
-    // std::cout << "Destructor called" << std::endl;
 }
 
 int Fixed::getRawBits(void) const
 {
-    // std::cout << "getRawBits member function called" << std::endl;
     return (fix_point_num >> fra_bits);
 }
 
@@ -176,7 +167,6 @@ int     Fixed::toInt(void) const
 
 float     Fixed::toFloat(void) const
 {
-    // std::cout << fix_point_num << std::endl;
     return ((float)(fix_point_num / (float)(1 << fra_bits)));
 }
 
