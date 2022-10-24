@@ -10,8 +10,8 @@ private:
     static const int    fra_bits = 8;
 public:
     Fixed();
-    Fixed (int value);
-    Fixed(float value);
+    Fixed (const int value);
+    Fixed(const float value);
     Fixed(const Fixed &f);
     ~Fixed();
     Fixed   &operator = (const Fixed &f);

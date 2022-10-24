@@ -6,13 +6,13 @@ Fixed::Fixed()
     fix_point_num = 0;
 }
 
-Fixed::Fixed(int value)
+Fixed::Fixed(const int value)
 {
-    std::cout << "Int constructor called" << std::endl; 
+    std::cout << "Int constructor called" << std::endl;
     fix_point_num = value << fra_bits;
 }
 
-Fixed::Fixed(float value)
+Fixed::Fixed(const float value)
 {
     std::cout << "Float constructor called" << std::endl;
     fix_point_num = (int)round(value * (float)(1 << fra_bits));
@@ -39,7 +39,7 @@ Fixed::~Fixed()
 int Fixed::getRawBits(void) const
 {
     std::cout << "getRawBits member function called" << std::endl;
-    return (fix_point_num >> fra_bits);
+    return (fix_point_num);
 }
 
 void    Fixed::setRawBits(int const raw)
