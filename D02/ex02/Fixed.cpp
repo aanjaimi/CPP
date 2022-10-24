@@ -76,7 +76,7 @@ Fixed   Fixed::operator * (const Fixed &f)
 {
     Fixed   res;
 
-    res.fix_point_num = this->fix_point_num * f.getRawBits();
+    res.fix_point_num = (this->fix_point_num * f.fix_point_num) >> fra_bits;
     return (res);
 }
 
@@ -152,7 +152,7 @@ Fixed::~Fixed()
 
 int Fixed::getRawBits(void) const
 {
-    return (fix_point_num >> fra_bits);
+    return (fix_point_num);
 }
 
 void    Fixed::setRawBits(int const raw)
