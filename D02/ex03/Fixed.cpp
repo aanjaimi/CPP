@@ -84,12 +84,7 @@ Fixed   Fixed::operator / (const Fixed &f)
 {
     Fixed   res;
 
-    if (f.getRawBits() == 0)
-    {
-        std::cout << "Can't divide by 0" << std::endl;
-        return (-1);
-    }
-    res.setRawBits(this->fix_point_num / f.fix_point_num);
+    res.setRawBits(this->fix_point_num / f.fix_point_num * (1 << fra_bits));
     return (res);
 }
 
