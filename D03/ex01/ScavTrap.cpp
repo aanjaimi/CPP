@@ -1,6 +1,6 @@
 #include "ScavTrap.hpp"
 
-ScavTrap::ScavTrap()
+ScavTrap::ScavTrap() : ClapTrap()
 {
     std::cout << "ScavTrap Default Constructor called" << std::endl;
     Hit_pt = 100;
@@ -8,10 +8,10 @@ ScavTrap::ScavTrap()
     Attack_dm = 20;
 }
 
-ScavTrap::ScavTrap(const std::string &n)
+ScavTrap::ScavTrap(const std::string &n) : ClapTrap(n)
 {
-    this->Name = n;
     std::cout << "ScavTrap string constructor" << std::endl;
+    Name = n;
     Hit_pt = 100;
     Energy_pt = 50;
     Attack_dm = 20;
@@ -41,7 +41,6 @@ void    ScavTrap::guardGate()
 
 void    ScavTrap::attack(const std::string &target)
 {
-    // ClapTrap::attack(target);
     if (Energy_pt == 0 || Hit_pt == 0)
     {
         std::cout << "ScavTrap can't do anything!!" << std::endl;

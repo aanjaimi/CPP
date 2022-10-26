@@ -3,6 +3,7 @@
 ClapTrap::ClapTrap()
 {
     std::cout << "ClapTrap Default Constructor called" << std::endl;
+    Name = "";
     Hit_pt = 10;
     Energy_pt = 10;
     Attack_dm = 0;
@@ -56,7 +57,7 @@ void    ClapTrap::attack(const std::string &target)
 
 void    ClapTrap::takeDamage(unsigned int amount)
 {
-    if (Energy_pt == 0 || Hit_pt == 0)
+    if (Hit_pt == 0)
     {
         std::cout << "ClapTrap can't do anything!!" << std::endl;
         return ;
