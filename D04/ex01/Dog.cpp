@@ -30,3 +30,8 @@ void    Dog::makeSound() const
 {
     std::cout << "How How" << std::endl;
 }
+
+Brain   const Dog::getBrain()
+{
+    return (*b);
+}

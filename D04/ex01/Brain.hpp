@@ -11,4 +11,6 @@ public:
     Brain(const Brain &b);
     Brain &operator = (const Brain &b);
     ~Brain();
+    std::string getIdea(int index);
+    void        setIdea(int index, std::string idea);
 };

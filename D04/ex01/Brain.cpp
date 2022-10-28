@@ -25,3 +25,13 @@ Brain::~Brain()
 {
     std::cout << "Brain : Destructor called" << std::endl;
 }
+
+std::string Brain::getIdea(int index)
+{
+    return (ideas[index]);
+}
+
+void        Brain::setIdea(int index, std::string idea)
+{
+    ideas[index] = idea;
+}
