@@ -3,7 +3,7 @@
 #include "Animal.hpp"
 #include "Brain.hpp"
 
-class Cat : public Animal , Brain
+class Cat : public Animal
 {
 private:
     Brain   *b;
@@ -12,6 +12,5 @@ public:
     Cat(const Cat &c);
     Cat &operator = (const Cat &c);
     ~Cat();
-    std::string getType() const;
     void        makeSound() const;
 };

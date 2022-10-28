@@ -6,9 +6,21 @@
 
 int main()
 {
-    const Animal *j = new Dog();
-    const Animal *i = new Cat();
-    delete j;//should not create a leak
-    delete i;
+    // const Animal *j = new Dog();
+    // const Animal *i = new Cat();
+    const Dog d;
+    const Dog e(d);
+    const Cat c;
+    const Cat b(c);
+
+    // i->makeSound();
+    // j->makeSound();
+    // d.makeSound();
+    // e.makeSound();
+    std::cout << "-------------------------\n";
+
+    // delete j;
+    // delete i;
+
     return 0;
 }

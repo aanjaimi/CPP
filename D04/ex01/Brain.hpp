@@ -10,5 +10,5 @@ public:
     Brain();
     Brain(const Brain &b);
     Brain &operator = (const Brain &b);
-    virtual ~Brain();
+    ~Brain();
 };
