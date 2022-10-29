@@ -2,7 +2,7 @@
 
 int main()
 {
-    ScavTrap    a;
+    ScavTrap    a();
     ClapTrap * p = new ScavTrap;
     p->attack("said");
     // ScavTrap    b(a);

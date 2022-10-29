@@ -9,7 +9,7 @@ int main()
     {
         Brain brain;
 
-	std::string ideas[100] = {
+	    std::string ideas[100] = {
 								"meowiing...",
 								"eating...",
 								"sleeping...",
@@ -54,5 +54,13 @@ int main()
 	
 	delete[] animals;
     }
-    // system("leaks Animal");
+
+    // {
+	// 	 Animal* j = new Dog();
+	// 	const Animal* i = new Cat();
+	// 	delete j;//should not create a leak
+	// 	delete i;
+    // }
+
+    system("leaks Animal");
 }
