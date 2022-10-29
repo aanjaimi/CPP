@@ -30,10 +30,10 @@ A_Animal::~A_Animal()
     std::cout << "A_Animal : Destructor called" << std::endl;
 }
 
-void    A_Animal::makeSound() const
-{
-    std::cout << "Cats don't bark" << std::endl;
-}
+// void    A_Animal::makeSound() const
+// {
+//     std::cout << "Cats don't bark" << std::endl;
+// }
 
 std::string A_Animal::getType() const
 {
