@@ -54,7 +54,6 @@ int main()
 	
 	delete[] animals;
     }
-
     // {
 	// 	 Animal* j = new Dog();
 	// 	const Animal* i = new Cat();

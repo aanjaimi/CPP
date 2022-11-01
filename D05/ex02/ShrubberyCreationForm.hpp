@@ -10,7 +10,7 @@ private:
 public:
     ShrubberyCreationForm();
     ShrubberyCreationForm(std::string const &target);
-    ShrubberyCreationForm(Form const &p);
+    ShrubberyCreationForm(ShrubberyCreationForm const &p);
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &p);
     ~ShrubberyCreationForm();
     void        action(Bureaucrat const & executor) const;

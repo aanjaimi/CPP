@@ -9,7 +9,7 @@ private:
 public:
     PresidentialPardonForm();
     PresidentialPardonForm(std::string const &target);
-    PresidentialPardonForm(Form const &p);
+    PresidentialPardonForm(PresidentialPardonForm const &f);
     PresidentialPardonForm &operator=(const PresidentialPardonForm &p);
     ~PresidentialPardonForm();
     void        action(Bureaucrat const & executor) const;

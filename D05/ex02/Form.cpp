@@ -79,12 +79,12 @@ void                Form::beSigned(const Bureaucrat &b)
 
 void Form::execute(Bureaucrat const & executor) const
 {
-    if (executor.getGrade() > Grade_e){
+    if (executor.getGrade() > Grade_e)
         throw (GradeTooLowException());
-    } else if (this->getSigned() == false){
+    if (this->getSigned() == false)
         throw (NotSignedForm());
-    }
-    std::cout << "Form: " << Name << " executed" << std::endl;
+    action(executor);
+    std::cout << "Form : " << Name << " executed" << std::endl;
 }
 
 std::ostream &operator << (std::ostream& out, const Form& f)
