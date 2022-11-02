@@ -13,7 +13,8 @@ public:
     ShrubberyCreationForm(ShrubberyCreationForm const &p);
     ShrubberyCreationForm &operator=(const ShrubberyCreationForm &p);
     ~ShrubberyCreationForm();
-    void        action(Bureaucrat const & executor) const;
+    void            action(Bureaucrat const & executor) const;
+    void            execute(Bureaucrat const & executor) const;
 };
 
 #define TREE_ASCII_ART "\

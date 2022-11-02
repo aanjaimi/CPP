@@ -36,3 +36,13 @@ void        ShrubberyCreationForm::action(Bureaucrat const &executor) const
     else
         std::cout << "Can't open file!\n";
 }
+
+void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
+{
+    if (executor.getGrade() > getGradeExecute())
+        throw (GradeTooLowException());
+    if (this->getSigned() == false)
+        throw (NotSignedForm());
+    action(executor);
+    std::cout << "Form : " << getName() << " executed" << std::endl;
+}
