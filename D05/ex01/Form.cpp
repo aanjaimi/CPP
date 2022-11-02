@@ -29,7 +29,7 @@ Form &Form::operator = (const Form &f)
         return (*this);
     if (f.getGradeSigned() <= 0 || f.getGradeSigned() <= 0)
         throw GradeTooHighException();
-    if (f.getGradeExecute() > 150 || f.getGradeExecute() > 0)
+    if (f.getGradeExecute() > 150 || f.getGradeExecute() > 150)
         throw GradeTooLowException();
     Signed = f.getSigned();
     return (*this);
