@@ -7,6 +7,6 @@ class C : public Base
 private:
     
 public:
-    C(){};
-    virtual ~C(){};
+    C();
+    virtual ~C();
 };
