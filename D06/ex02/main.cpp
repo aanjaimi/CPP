@@ -5,10 +5,6 @@
 
 Base *generate(void)
 {
-    // A   *a;
-    // B   *b;
-    // C   *c;
-
     int r = rand()%3;
     switch (r)
     {
@@ -69,7 +65,6 @@ void identify(Base &p)
 int main()
 {
     Base    *b;
-
 
     srand(time(NULL));
     b = generate();
