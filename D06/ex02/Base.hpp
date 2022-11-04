@@ -7,8 +7,8 @@ class Base
 private:
     
 public:
-    Base(){};
-    virtual ~Base(){};
+    Base();
+    virtual ~Base();
 };
 
 Base *generate(void);
