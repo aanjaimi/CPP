@@ -64,7 +64,7 @@ public:
     T &operator [](unsigned int i)
     {
         if (i >= sz)
-            throw (std::out_of_range("Out Of Range"));
+            throw (std::out_of_range("Index out of range"));
         return (arr[i]);
     }
     ~Array()
