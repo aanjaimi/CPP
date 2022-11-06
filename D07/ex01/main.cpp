@@ -1,8 +1,8 @@
 #include "Iter.hpp"
 
-void    f(std::string &s)
+void    f(const std::string &s)
 {
-    s = "anjaimi";
+    std::cout << s << std::endl;
 }
 
 int main()
@@ -14,6 +14,5 @@ int main()
         "ayoub"
     };
     iter(strs, sizeof(strs) / sizeof(std::string), f);
-    for (int i = 0;i < 4;i++)
-        std::cout << strs[i] << std::endl;
+    return (0);
 }

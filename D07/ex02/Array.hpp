@@ -10,7 +10,7 @@ private:
     unsigned int    sz;
     T               *arr;
 public:
-    Array()
+    Array(void)
     {
         sz = 0;
         arr = NULL;
