@@ -19,6 +19,8 @@ public:
     {
         sz = n;
         arr = new T[n];
+        for (unsigned int i = 0;i < n;i++)
+            arr[i] = T();
     };
     Array(const Array &a)
     {
@@ -39,7 +41,7 @@ public:
             }
         }
     };
-    T const &operator =(const T &a)
+    Array<T> const &operator =(const Array<T> &a)
     {
         if (this != &a)
         {
@@ -60,6 +62,7 @@ public:
                 }
             }    
         }
+        return (*this);
     }
     T &operator [](unsigned int i)
     {
