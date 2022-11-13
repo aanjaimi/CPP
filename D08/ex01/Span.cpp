@@ -10,6 +10,21 @@ Span::Span(unsigned int N)
     this->N = N;
 }
 
+Span::Span(Span const &other)
+{
+    *this = other;
+}
+
+Span const &Span::operator = (const Span &other)
+{
+    if (this != &other)
+    {
+        this->N = other.N;
+        this->v = other.v;
+    }
+    return (*this);
+}
+
 Span::~Span()
 {
     
@@ -20,7 +35,7 @@ unsigned int     Span::size() const
     return (v.size());
 }
 
-std::vector<int> const &Span::getValues() const
+std::vector<int> &Span::getValues()
 {
     return (v);
 }
@@ -67,4 +82,13 @@ int     Span::longestSpan()
         }
     }
     return (max);
+}
+
+void    Span::addManyNumber(std::vector<int>::iterator begin, std::vector<int>::iterator end)
+{
+    if (end - begin + this->size() > N)
+        throw AlreadyFull();
+    std::vector<int>::iterator it;
+    for (it = begin;it < end;it++)
+        v.push_back(*it);
 }
